@@ -1,0 +1,43 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "ecs-container",
+      "image": "730335542698.dkr.ecr.us-east-2.amazonaws.com/ecr-repository:latest",
+      "cpu": 256,
+      "memory": 512,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/log-group-ecs-container",
+          "awslogs-create-group": "true",
+          "awslogs-region": "us-east-2",
+          "awslogs-stream-prefix": "ecs-ecs-container"
+        }
+      },
+      "systemControls": []
+    }
+  ],
+  "family": "aws-task-definition",
+  "taskRoleArn": "arn:aws:iam::730335542698:role/task-role",
+  "executionRoleArn": "arn:aws:iam::730335542698:role/ecs-task-execution-role",
+  "networkMode": "awsvpc",
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "tags": []
+}
