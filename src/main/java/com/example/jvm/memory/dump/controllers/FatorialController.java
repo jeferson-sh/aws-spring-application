@@ -1,12 +1,22 @@
 package com.example.jvm.memory.dump.controllers;
 
+import com.example.jvm.memory.dump.service.MemoryLeakSimulator;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Random;
 
 @RestController
+@RequiredArgsConstructor
 public class FatorialController {
+
+    private final MemoryLeakSimulator service;
+
+    @GetMapping("/error")
+    public void getError(){
+        this.service.errorMemory();
+    }
 
     @GetMapping("/factorial")
     public String getFatorial() {
