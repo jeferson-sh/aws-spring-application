@@ -2,6 +2,7 @@ package com.example.jvm.memory.dump.controllers;
 
 import com.example.jvm.memory.dump.service.MemoryLeakSimulator;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,11 @@ import java.util.Random;
 public class FatorialController {
 
     private final MemoryLeakSimulator service;
+
+    @GetMapping
+    public ResponseEntity<String> up(){
+        return ResponseEntity.ok().body("ok");
+    }
 
     @GetMapping("/error")
     public void getError(){
