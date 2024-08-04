@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example.jvm</groupId>
-	<artifactId>memory.dump</artifactId>
+	<artifactId>aws-spring-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>memory.dump</name>
+	<name>aws-spring-application</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
