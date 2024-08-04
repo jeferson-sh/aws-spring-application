@@ -1,0 +1,28 @@
+<configuration>
+
+    <!-- Definindo o encoder JSON para os logs -->
+    <appender name="JSON_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/app-log.json</file>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <!-- Configurações adicionais do encoder, se necessário -->
+        </encoder>
+    </appender>
+
+    <!-- Definindo o appender para logs console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <!-- Configurações adicionais do encoder, se necessário -->
+        </encoder>
+    </appender>
+
+<!--    &lt;!&ndash; Definindo o nível de log para as diferentes packages &ndash;&gt;-->
+<!--    <logger name="org.springframework" level="INFO"/>-->
+<!--    <logger name="com.yourcompany" level="INFO"/>-->
+
+    <!-- Definindo o root logger -->
+    <root level="INFO">
+        <appender-ref ref="JSON_FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
